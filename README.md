@@ -13,7 +13,7 @@ Put this in your project.clj, then `lein deps`, and you are good to go, no more 
 with native deps.
 
 ```clojure
-[jilch "0.1.0"]
+[jilch "0.1.0-SNAPSHOT"]
 ```
 ## License
 
