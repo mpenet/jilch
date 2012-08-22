@@ -36,66 +36,66 @@
 (def pull ZMQ/PULL)
 
 (defn socket
-  [#^ZMQ$Context context type]
+  [^ZMQ$Context context type]
   (.socket context type))
 
 (defn bind
-  [#^ZMQ$Socket socket url]
+  [^ZMQ$Socket socket url]
   (doto socket
     (.bind url)))
 
 (defn connect
-  [#^ZMQ$Socket socket url]
+  [^ZMQ$Socket socket url]
   (doto socket
     (.connect url)))
 
 (defn subscribe
-  ([#^ZMQ$Socket socket topic]
+  ([^ZMQ$Socket socket topic]
      (doto socket
        (.subscribe (encode topic))))
-  ([#^ZMQ$Socket socket]
+  ([^ZMQ$Socket socket]
      (subscribe socket (byte-array []))))
 
 (defn unsubscribe
-  ([#^ZMQ$Socket socket topic]
+  ([^ZMQ$Socket socket topic]
      (doto socket
        (.unsubscribe (encode topic))))
-  ([#^ZMQ$Socket socket]
+  ([^ZMQ$Socket socket]
      (unsubscribe socket (byte-array []))))
 
 (defn send
-  ([#^ZMQ$Socket socket message flags]
+  ([^ZMQ$Socket socket message flags]
      (.send socket (encode message) flags))
-  ([#^ZMQ$Socket socket message]
+  ([^ZMQ$Socket socket message]
      (send socket message noblock)))
 
 (defn recv
-  ([#^ZMQ$Socket socket flags]
+  ([^ZMQ$Socket socket flags]
      (.recv socket flags))
-  ([#^ZMQ$Socket socket]
+  ([^ZMQ$Socket socket]
      (recv socket 0)))
 
 (defn recv-all
-  ([#^ZMQ$Socket socket flags]
+  ([^ZMQ$Socket socket flags]
      (loop [acc []]
        (let [msg (recv socket flags)]
          (if (.hasReceiveMore socket)
            (recur (conj acc msg))
            (conj acc msg)))))
-  ([#^ZMQ$Socket socket]
+  ([^ZMQ$Socket socket]
      (recv-all socket 0)))
 
 (defn identify
-  [#^ZMQ$Socket socket name]
+  [^ZMQ$Socket socket name]
   (.setIdentity socket (encode name)))
 
 (defn set-linger
-  [#^ZMQ$Socket socket linger-ms]
+  [^ZMQ$Socket socket linger-ms]
   (doto socket
     (.setLinger (long linger-ms))))
 
 (defn set-hwm
-  [#^ZMQ$Socket socket hwm]
+  [^ZMQ$Socket socket hwm]
   (if hwm
     (doto socket
       (.setHWM (long hwm)))
