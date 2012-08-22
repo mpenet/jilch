@@ -54,18 +54,14 @@
     (.connect url)))
 
 (defn subscribe
-  ([^ZMQ$Socket socket topic]
-     (doto socket
-       (.subscribe (encode topic))))
-  ([^ZMQ$Socket socket]
-     (subscribe socket nil)))
+  [^ZMQ$Socket socket & [topic]]
+  (doto socket
+    (.subscribe (encode topic))))
 
 (defn unsubscribe
-  ([^ZMQ$Socket socket topic]
-     (doto socket
-       (.unsubscribe (encode topic))))
-  ([^ZMQ$Socket socket]
-     (unsubscribe socket nil)))
+  [^ZMQ$Socket socket & [topic]]
+  (doto socket
+    (.unsubscribe (encode topic))))
 
 (defn send
   ([^ZMQ$Socket socket message flags]
