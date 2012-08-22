@@ -12,7 +12,11 @@
 
   Object
   (encode [message]
-    message))
+    message)
+
+  nil
+  (encode [_]
+    (byte-array [])))
 
 (defn context [threads]
   (ZMQ/context threads))
@@ -54,14 +58,14 @@
      (doto socket
        (.subscribe (encode topic))))
   ([^ZMQ$Socket socket]
-     (subscribe socket (byte-array []))))
+     (subscribe socket nil)))
 
 (defn unsubscribe
   ([^ZMQ$Socket socket topic]
      (doto socket
        (.unsubscribe (encode topic))))
   ([^ZMQ$Socket socket]
-     (unsubscribe socket (byte-array []))))
+     (unsubscribe socket nil)))
 
 (defn send
   ([^ZMQ$Socket socket message flags]
