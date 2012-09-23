@@ -4,8 +4,12 @@ Clojure ZeroMQ Library using jeromq, it is a direct port of zilch.
 
 ## But why ?
 
-Wanted to see if I could port zilch to jeromq in less than 5 minutes.
-It was that easy (well, jilch is that good).
+Because [jeromq](https://github.com/miniway/jeromq) made it easy.
+
+## Using
+
+If you use zilch you just need to change your imports and it
+should work.
 
 It also includes a few enhancements from the original, such as more complete
 type hinting, extensibility, a few functions from the 0mq docs and
