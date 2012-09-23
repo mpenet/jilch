@@ -1,4 +1,4 @@
-# Jilch
+# Jilch [![Build Status](https://secure.travis-ci.org/mpenet/jilch.png?branch=master)](http://travis-ci.org/mpenet/jilch)
 
 Clojure ZeroMQ Library using jeromq, it is a direct port of zilch.
 
