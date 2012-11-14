@@ -1,4 +1,4 @@
-(defproject cc.qbits/jilch "0.1.0"
+(defproject cc.qbits/jilch "0.2.0"
   :description "Jilch: A Clojure 0MQ Messaging Library (using jeromq)"
   :url "https://github.com/mpenet/jilch"
   :repositories {"sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots"
