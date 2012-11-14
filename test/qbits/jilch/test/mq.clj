@@ -1,7 +1,7 @@
-(ns jilch.test.mq
+(ns qbits.jilch.test.mq
   (:use clojure.test)
   (:import java.util.UUID)
-  (:require [jilch.mq :as mq]))
+  (:require [qbits.jilch.mq :as mq]))
 
 (defn uuid [] (str (UUID/randomUUID)))
 

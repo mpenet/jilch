@@ -1,4 +1,4 @@
-(ns jilch.mq
+(ns qbits.jilch.mq
   (:refer-clojure :exclude [send])
   (:import [org.jeromq ZMQ ZMQ$Context ZMQ$Socket]))
 
