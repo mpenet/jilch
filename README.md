@@ -21,7 +21,7 @@ Put this in your project.clj, then `lein deps`, and you are good to go, no more 
 with native deps.
 
 ```clojure
-[cc.qbits/jilch "0.2.0"]
+[cc.qbits/jilch "0.3.0"]
 ```
 ## License
 
